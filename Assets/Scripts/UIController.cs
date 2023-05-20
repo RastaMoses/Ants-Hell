@@ -38,6 +38,7 @@ public class UIController : MonoBehaviour
                 upgradeLevelText[i].text = shop.upgradeLvls[i] + "/" + shop.upgrades[i].costs.Count;
             }
             
+            
         }
         //Update Cost Text
         
@@ -47,6 +48,10 @@ public class UIController : MonoBehaviour
             {
                 upgradeCostTexts[i].text = shop.upgrades[i].costs[shop.upgradeLvls[i]].ToString();
 
+            }
+            else if (shop.upgrades[i].infiniteUpgrades)
+            {
+                upgradeCostTexts[i].text = shop.upgrades[i].costs[0].ToString();
             }
         }
         //Update Resource Texts

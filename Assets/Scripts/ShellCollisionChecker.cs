@@ -13,6 +13,7 @@ public class ShellCollisionChecker : MonoBehaviour
     private void Awake()
     {
         TryGetComponent(out _Collider);
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 
     private void Start()
@@ -24,21 +25,36 @@ public class ShellCollisionChecker : MonoBehaviour
     {
         // disable collider to avoid hitting itself when checking for collisions
         _Collider.enabled = false;
+
+        int counter = 3;
+        int noLocationCounter = 20;
         while (true)
         {
+            
             // check for collisions
             if (Physics2D.OverlapCircle(transform.position, checkRadius, WhatShouldIAvoid))
             {
+                counter--;
+                noLocationCounter--;
                 // if found, use RandomPointOnBox and Factory static variables to look for a new position
                 transform.position = FindObjectOfType<shellSpawner>().RandomPointOnBox();
+                Debug.Log("relocating shell");
             }
             else
             {
                 // else enable collider and break the loop
                 _Collider.enabled = true;
+                GetComponent<SpriteRenderer>().enabled = true;
                 yield break;
             }
-            yield return new WaitForEndOfFrame();
+
+            if (counter <= 0)
+            {
+                if (noLocationCounter <= 0) { yield return null; }
+                yield return new WaitForEndOfFrame();
+                counter = 3;
+            }
+                
         }
     }
 }

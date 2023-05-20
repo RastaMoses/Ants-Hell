@@ -13,7 +13,6 @@ public class shellSpawner : MonoBehaviour
     [SerializeField] Vector2 spawnAmountRange;
 
     float timer = 0;
-    
     void Update()
     {
         timer -= Time.deltaTime;
@@ -31,6 +30,8 @@ public class shellSpawner : MonoBehaviour
     {
         //Get random position in Zone Rectangle
         Vector2 spawnPoint = new Vector2(Random.Range(-spawnZone.localScale.x / 2, spawnZone.localScale.x / 2), Random.Range(-spawnZone.localScale.y / 2, spawnZone.localScale.y / 2));
+
+
 
         //If no obstacle hit will instantiate either shell or golden shell
         if (Random.Range(0,goldenChance) == 0)

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 6500045733909316869}
   - component: {fileID: 3632257425881022686}
   - component: {fileID: 4093095630059540480}
-  m_Layer: 0
+  - component: {fileID: 1949115736433644673}
+  m_Layer: 8
   m_Name: Golden Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3632257425881022686
 SpriteRenderer:
@@ -120,3 +121,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1949115736433644673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7550307746484302397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2cc605b0450384c93eb3b4643c03a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkRadius: 1
+  WhatShouldIAvoid:
+    serializedVersion: 2
+    m_Bits: 384

@@ -136,4 +136,4 @@ MonoBehaviour:
   checkRadius: 1
   WhatShouldIAvoid:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 1472

@@ -24,8 +24,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-      
-        rigidbody.velocity = Vector2.MoveTowards(rigidbody.velocity, movementInput * stats.movementSpeed, Time.fixedDeltaTime * stats.movementSpeed * stats.movementAcceleration);
- 
+        
+            rigidbody.velocity = Vector2.MoveTowards(rigidbody.velocity, movementInput * stats.movementSpeed, Time.fixedDeltaTime * stats.movementSpeed * stats.movementAcceleration);
+        if (rigidbody.velocity != Vector2.zero)
+        {
+            var velocity = rigidbody.velocity;
+            float angleInRadian = Mathf.Atan2(velocity.y, velocity.x);
+            Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, (Mathf.Rad2Deg * angleInRadian) - 90));
+            gameObject.transform.rotation = rotation;
+        }
     }
 }

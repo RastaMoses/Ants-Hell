@@ -64,6 +64,12 @@ public class EnemyAI : MonoBehaviour
         Vector2 force= dir * speed * Time.fixedDeltaTime;
 
         rb.AddForce(force);
+
+        var velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
+        float angleInRadian = Mathf.Atan2(velocity.y, velocity.x);
+        Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, (Mathf.Rad2Deg * angleInRadian)-90));
+        gameObject.transform.rotation = rotation;
+
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
         if (distance < nextWaypointDistance)

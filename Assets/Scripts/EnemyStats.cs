@@ -2,18 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class EnemyStats : MonoBehaviour
 {
 
-    public float health;
     public float movementSpeed;
-    public float movementAcceleration;
-    public float currency;
-    public GameObject Inventory;
-
-
-
-
+    public float health;
+    public float maxHealth;
+    public float damage;
     // Start is called before the first frame update
     void Start()
     {

@@ -15,12 +15,14 @@ public class TurretBulletCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Hit Something!");
         if (collision.gameObject.layer == 10)
         {
             if (!stats.piercing)
             {
                 Destroy(gameObject);
             }
+            collision.gameObject.GetComponent<EnemyCollision>().TakeDamage(stats.damage);
         }
     }
     // Update is called once per frame

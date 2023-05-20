@@ -516,7 +516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   health: 100
-  aimSpeed: 1
+  aimSpeed: 0.1
   fireRate: 0
 --- !u!1 &933088938
 GameObject:

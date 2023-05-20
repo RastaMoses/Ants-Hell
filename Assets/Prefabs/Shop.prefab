@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3877138491890949247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4474502464394124129}
+  - component: {fileID: 8259663431067480322}
+  m_Layer: 0
+  m_Name: Shop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4474502464394124129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877138491890949247}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8259663431067480322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877138491890949247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c710084ec9dfb9c438f6434bf8d0178f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgrades:
+  - {fileID: 11400000, guid: e5b3fa818c13229428c2c5afa2414d94, type: 2}
+  - {fileID: 11400000, guid: 38bbce3ccbf70294ca253680807f404f, type: 2}
+  - {fileID: 11400000, guid: 090798c079d9b464bb44058619c3721c, type: 2}
+  - {fileID: 11400000, guid: 5435f24479369324b87f39de8aab2c00, type: 2}
+  - {fileID: 11400000, guid: ca5bda64d488be94db825e297d99a2b4, type: 2}
+  - {fileID: 11400000, guid: 88405910275ec7d4392d2a0ef8eddbdd, type: 2}
+  - {fileID: 11400000, guid: 0f4263ac2e7bc6e499ed719d2f3d375b, type: 2}
+  - {fileID: 11400000, guid: e257dafebab4c7e48a85ab6d37869439, type: 2}
+  - {fileID: 11400000, guid: 6a749bc48144e33408e3c34701d569ff, type: 2}
+  - {fileID: 11400000, guid: 03c501c521d549c46bab7f1c6d9a63af, type: 2}
+  - {fileID: 11400000, guid: d8ab815fc2a66524b900935cdfdbd55d, type: 2}
+  - {fileID: 11400000, guid: fc26e9d60f027c947ba0717ea47a423c, type: 2}
+  upgradeLvls: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  canvas: {fileID: 0}
+  playerShells: 0
+  hiveShells: 0

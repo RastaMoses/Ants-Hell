@@ -71,7 +71,7 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint++;
         }
 
-        transform.LookAt(target.position);
+        //transform.LookAt(target.position);
     }
 
     void OnPathComplete(Path p)

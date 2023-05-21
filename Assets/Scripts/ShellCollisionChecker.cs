@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class ShellCollisionChecker : MonoBehaviour
 {
+    [SerializeField] float randomAngularVelocity = 2f;
     public float checkRadius;
     public LayerMask WhatShouldIAvoid;
 
     private Collider2D _Collider;
-    Rigidbody2D rb;
+    Rigidbody rb;
 
     GameObject magnetTarget;
     float magnetSpeed;
@@ -20,7 +21,7 @@ public class ShellCollisionChecker : MonoBehaviour
     private void Awake()
     {
         TryGetComponent(out _Collider);
-        GetComponent<SpriteRenderer>().enabled = false;
+        
     }
 
     private void Start()
@@ -30,6 +31,8 @@ public class ShellCollisionChecker : MonoBehaviour
 
     private IEnumerator Initialize()
     {
+        rb = GetComponentInParent<Rigidbody>();
+        rb.angularVelocity = new Vector3(Random.Range(-randomAngularVelocity, randomAngularVelocity), Random.Range(-randomAngularVelocity, randomAngularVelocity), Random.Range(-randomAngularVelocity, randomAngularVelocity));
         // disable collider to avoid hitting itself when checking for collisions
         _Collider.enabled = false;
 
@@ -51,7 +54,7 @@ public class ShellCollisionChecker : MonoBehaviour
             {
                 // else enable collider and break the loop
                 _Collider.enabled = true;
-                GetComponent<SpriteRenderer>().enabled = true;
+                //Start Animation
                 yield break;
             }
 

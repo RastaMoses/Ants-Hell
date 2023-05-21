@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Magnet : MonoBehaviour
 {
-    [SerializeField] float attractSpeed;
+    [SerializeField] public  float attractSpeed;
     [SerializeField] float time = 90f;
     [SerializeField] GameObject constructionZone;
     [SerializeField] LayerMask shellsLayers;
@@ -17,7 +17,7 @@ public class Magnet : MonoBehaviour
         shellsInRadius = Physics2D.OverlapCircleAll(transform.position, GetComponent<CircleCollider2D>().radius, shellsLayers);
         foreach (Collider2D i in shellsInRadius)
         {
-            //i.GetComponent<EnemyAI>().Magnet(attractSpeed, transform.position);
+            i.GetComponent<ShellCollisionChecker>().Magnetize(attractSpeed, gameObject, false);
         }
         StartCoroutine(Timer());
     }
@@ -26,7 +26,7 @@ public class Magnet : MonoBehaviour
     {
         if (collision.CompareTag("Shell"))
         {
-            //collision.GetComponent<Shell>().Magnet(attractSpeed, transform.position);
+            collision.GetComponent<ShellCollisionChecker>().Magnetize(attractSpeed, gameObject, false);
         }
     }
 
@@ -34,7 +34,7 @@ public class Magnet : MonoBehaviour
     {
         if (collision.CompareTag("Shell"))
         {
-            //collision.GetComponent<Shell>().StopMagnet();
+            collision.GetComponent<ShellCollisionChecker>().DeMagnetize(gameObject);
         }
     }
 
@@ -44,7 +44,7 @@ public class Magnet : MonoBehaviour
         shellsInRadius = Physics2D.OverlapCircleAll(transform.position, GetComponent<CircleCollider2D>().radius, shellsLayers);
         foreach (Collider2D i in shellsInRadius)
         {
-            //i.GetComponent<Shell>().StopMagnet();
+            i.GetComponent<ShellCollisionChecker>().DeMagnetize(gameObject);
         }
         Instantiate(constructionZone, transform.position, Quaternion.identity);
         Destroy(gameObject);

@@ -24,9 +24,9 @@ public class HealingTent : MonoBehaviour
 
     IEnumerator Buff()
     {
-        //player.Buff(moveSpeedMultiplier);
+        player.stats.Buff(moveSpeedMultiplier);
         yield return new WaitForSeconds(activationTime);
-        //player.StopBuff();
+        player.stats.Debuff();
         if (charges <= 0)
         {
             Instantiate(cosntructionZone, transform.position, Quaternion.identity);

@@ -9,7 +9,14 @@ public class ShellCollisionChecker : MonoBehaviour
     public LayerMask WhatShouldIAvoid;
 
     private Collider2D _Collider;
+    Rigidbody2D rb;
 
+    GameObject magnetTarget;
+    float magnetSpeed;
+
+    bool magnetized = false;
+
+    List<GameObject> magnetList = new List<GameObject>();
     private void Awake()
     {
         TryGetComponent(out _Collider);
@@ -55,6 +62,49 @@ public class ShellCollisionChecker : MonoBehaviour
                 counter = 3;
             }
                 
+        }
+    }
+
+    private void Update()
+    {
+        if(magnetized)
+        {
+            rb.velocity = Vector3.MoveTowards(transform.position, magnetTarget.transform.position, magnetSpeed * Time.deltaTime);
+        }
+    }
+
+    public void Magnetize(float attractSpeed, GameObject target, bool player)
+    {
+        magnetList.Add(target);
+        if(player || !magnetized)
+        {
+            magnetTarget = target;
+            magnetSpeed = attractSpeed;
+            magnetized= true;
+        }
+    }
+
+    public void DeMagnetize(GameObject target)
+    {
+        if (magnetList.Contains(target)) 
+        {
+            magnetList.Remove(target);
+        }
+        if (magnetList.Count > 0)
+        {
+            if (target.GetComponent<PlayerMagnet>())
+            {
+                Magnetize(target.GetComponent<PlayerMagnet>().attractSpeed, target, true);
+            }
+            else
+            {
+                Magnetize(target.GetComponent<Magnet>().attractSpeed, target, false);
+            }
+        }
+        else
+        {
+            magnetized = false;
+
         }
     }
 }

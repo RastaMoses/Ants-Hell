@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 
     public Rigidbody2D rigidbody;
     public PlayerStats stats;
+    public PlayerMagnet magnet;
 
     public Vector2 movementInput;
     // Start is called before the first frame update

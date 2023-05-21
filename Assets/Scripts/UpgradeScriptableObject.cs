@@ -7,4 +7,6 @@ public class UpgradeScriptableObject : ScriptableObject
     public string upgradeName;
     public bool infiniteUpgrades;
     public List<int> costs;
+    public bool playerUpgrade;
+    public List<float> upgradeStats;
 }

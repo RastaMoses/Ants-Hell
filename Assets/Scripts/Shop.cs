@@ -12,9 +12,12 @@ public class Shop : MonoBehaviour
     public int playerShells;
     public int hiveShells;
 
-    public GameObject player;
+    public PlayerController player;
 
-
+    private void Start()
+    {
+        player = FindObjectOfType<PlayerController>();
+    }
     public int GetCost(int upgradeNumber)
     {
         if (upgrades[upgradeNumber].infiniteUpgrades)
@@ -42,7 +45,30 @@ public class Shop : MonoBehaviour
             //Enough money
             hiveShells -= GetCost(upgradeNumber);
             upgradeLvls[upgradeNumber]++;
-            //Send upgrade update to turret and player
+            if (upgrades[upgradeNumber].playerUpgrade)
+            {
+                if(upgradeNumber == 4)
+                {
+                    //Magnet
+                    player.magnet.ChangeRadius(upgrades[upgradeNumber].upgradeStats[upgradeLvls[upgradeNumber]]);
+                }
+                else if (upgradeNumber== 5)
+                {
+                    player.stats.movementSpeed = upgrades[upgradeNumber].upgradeStats[upgradeLvls[upgradeNumber]];
+                }
+                else if (upgradeNumber == 6)
+                {
+                    player.stats.maxHP = upgrades[upgradeNumber].upgradeStats[upgradeLvls[upgradeNumber]];
+                }
+                else if(upgradeNumber == 7)
+                {
+                    player.stats.carryCapacity = upgrades[upgradeNumber].upgradeStats[upgradeLvls[upgradeNumber]];
+                }
+            }
+            else if (upgradeNumber == 0)
+            {
+
+            }
         }
         UpdateUI();
     }

@@ -178,8 +178,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1457648059
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153702516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 18.8337, y: 10.1749, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -308,8 +308,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 494069015
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.6981132, g: 0.08825203, b: 0.2727628, a: 0.6313726}
@@ -398,7 +398,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -422,14 +422,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574649977}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.024079692, y: -0, z: -0, w: 0.9997101}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -2.76, y: 0, z: 0}
 --- !u!114 &1574649981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,8 +575,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 494069015
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.6981132, g: 0.08825203, b: 0.2727628, a: 0.6313726}
@@ -604,6 +604,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -29.81}
+--- !u!1001 &3284266246311541270
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1515933365207867231, guid: 97acbe3eed89be04fb0d3cc2312bb2e7, type: 3}
+      propertyPath: m_Name
+      value: Physics Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553285417490921625, guid: 97acbe3eed89be04fb0d3cc2312bb2e7, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553285417490921625, guid: 97acbe3eed89be04fb0d3cc2312bb2e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0573
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553285417490921625, guid: 97acbe3eed89be04fb0d3cc2312bb2e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553285417490921625, guid: 97acbe3eed89be04fb0d3cc2312bb2e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553285417490921625, guid: 97acbe3eed89be04fb0d3cc2312bb2e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553285417490921625, guid: 97acbe3eed89be04fb0d3cc2312bb2e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553285417490921625, guid: 97acbe3eed89be04fb0d3cc2312bb2e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553285417490921625, guid: 97acbe3eed89be04fb0d3cc2312bb2e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553285417490921625, guid: 97acbe3eed89be04fb0d3cc2312bb2e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553285417490921625, guid: 97acbe3eed89be04fb0d3cc2312bb2e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553285417490921625, guid: 97acbe3eed89be04fb0d3cc2312bb2e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 97acbe3eed89be04fb0d3cc2312bb2e7, type: 3}
 --- !u!1001 &4713010141394623390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -617,13 +678,17 @@ PrefabInstance:
       value: Shell Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 6917453491909070311, guid: b13db5fc56744504bad427c6e97e342e, type: 3}
+      propertyPath: spawnZ
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917453491909070311, guid: b13db5fc56744504bad427c6e97e342e, type: 3}
       propertyPath: shellPrefab
       value: 
       objectReference: {fileID: 6843579892274311877, guid: 6b232046a5087254da4fadf62da59cfe, type: 3}
     - target: {fileID: 6917453491909070311, guid: b13db5fc56744504bad427c6e97e342e, type: 3}
       propertyPath: goldenShellPrefab
       value: 
-      objectReference: {fileID: 7550307746484302397, guid: d6569b21e4242604d8896f9ef8a0f7a4, type: 3}
+      objectReference: {fileID: 6843579892274311877, guid: 7576365a6b260de4f98ed90b5fac5b5a, type: 3}
     - target: {fileID: 6917453491909070311, guid: b13db5fc56744504bad427c6e97e342e, type: 3}
       propertyPath: spawnAmountRange.y
       value: 3

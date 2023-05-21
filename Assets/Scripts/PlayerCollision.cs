@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
     public PlayerStats stats;
+    [SerializeField] float minZLevelForShellPickup = 2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,10 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.transform.position.z > minZLevelForShellPickup)
+        {
+            return;
+        }
         Debug.Log("Player collided!");
         if (collision.gameObject.layer == 8)
         {

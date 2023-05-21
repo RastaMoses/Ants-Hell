@@ -11,6 +11,7 @@ public class shellSpawner : MonoBehaviour
     [SerializeField] int goldenChance = 25;
     [SerializeField] Vector2 spawnIntervalRange;
     [SerializeField] Vector2 spawnAmountRange;
+    [SerializeField] float spawnZ = -5;
 
     float timer = 0;
     void Update()
@@ -29,7 +30,7 @@ public class shellSpawner : MonoBehaviour
     void SpawnShell()
     {
         //Get random position in Zone Rectangle
-        Vector2 spawnPoint = new Vector2(Random.Range(-spawnZone.localScale.x / 2, spawnZone.localScale.x / 2), Random.Range(-spawnZone.localScale.y / 2, spawnZone.localScale.y / 2));
+        Vector3 spawnPoint = new Vector3(Random.Range(-spawnZone.localScale.x / 2, spawnZone.localScale.x / 2), Random.Range(-spawnZone.localScale.y / 2, spawnZone.localScale.y / 2), spawnZ);
 
 
 

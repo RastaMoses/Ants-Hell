@@ -8,7 +8,7 @@ public class PlayerStats : MonoBehaviour
     public float health;
     public float movementSpeed;
     public float movementAcceleration;
-    
+    public int shells;
     public GameObject Inventory;
 
 

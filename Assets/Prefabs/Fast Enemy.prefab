@@ -165,7 +165,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -211,6 +211,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 8165581119233994670}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  hiveLayer:
+    serializedVersion: 2
+    m_Bits: 8192
 --- !u!114 &8165581119233994670
 MonoBehaviour:
   m_ObjectHideFlags: 0

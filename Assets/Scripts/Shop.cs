@@ -12,6 +12,8 @@ public class Shop : MonoBehaviour
     public int playerShells;
     public int hiveShells;
 
+    public GameObject player;
+
 
     public int GetCost(int upgradeNumber)
     {
@@ -58,8 +60,9 @@ public class Shop : MonoBehaviour
 
     public void EnteredHive()
     {
-        hiveShells += playerShells;
-        playerShells = 0;
+        hiveShells += player.GetComponent<PlayerStats>().shells;
+        player.GetComponent<PlayerStats>().shells = 0;
+        canvas.transform.GetChild(0).gameObject.SetActive(true);
         //Open canvas
     }
 }

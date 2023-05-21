@@ -5,21 +5,26 @@ using UnityEngine;
 public class EnemyCollision : MonoBehaviour
 {
     public EnemyStats stats;
+    [SerializeField]
+    LayerMask playerLayer;
+    [SerializeField]
+    LayerMask hiveLayer;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 6)
+        Debug.Log("Enemy Collided!");
+        if ((playerLayer.value & (1 << collision.gameObject.transform.gameObject.layer)) != 0)
         {
            
             collision.gameObject.GetComponent<PlayerCollision>().TakeDamage(stats.damage);
             Destroy(gameObject);
         }
-        else if (collision.gameObject.layer == 11)
+        else if ((hiveLayer.value & (1 << collision.gameObject.transform.gameObject.layer)) != 0)
         {
 
             collision.gameObject.GetComponent<AntHillCollision>().TakeDamage(stats.damage);

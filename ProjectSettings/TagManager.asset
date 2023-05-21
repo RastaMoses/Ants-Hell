@@ -17,8 +17,8 @@ TagManager:
   - TurretBullet
   - Enemy
   - DeadZone
-  - 
-  - 
+  - Golden Shell
+  - Hill
   - 
   - 
   - 
@@ -38,6 +38,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2837319237
+    locked: 0
+  - name: Shells
+    uniqueID: 4078163183
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Outposts
+    uniqueID: 494069015
+    locked: 0
+  - name: Enemies
+    uniqueID: 4055947405
+    locked: 0
+  - name: Bullets
+    uniqueID: 1712788035
+    locked: 0
+  - name: Foreground
+    uniqueID: 83413893
     locked: 0

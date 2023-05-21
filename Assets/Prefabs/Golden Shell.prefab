@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3632257425881022686}
   - component: {fileID: 4093095630059540480}
   - component: {fileID: 1949115736433644673}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Golden Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,4 +136,4 @@ MonoBehaviour:
   checkRadius: 1
   WhatShouldIAvoid:
     serializedVersion: 2
-    m_Bits: 1472
+    m_Bits: 15808

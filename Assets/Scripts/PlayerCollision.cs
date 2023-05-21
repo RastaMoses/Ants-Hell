@@ -34,4 +34,20 @@ public class PlayerCollision : MonoBehaviour
             Die();
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Player collided!");
+        if (collision.gameObject.layer == 8)
+        {
+            stats.shells += 1;
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.layer == 12)
+        {
+            stats.shells += 5;
+            Destroy(collision.gameObject);
+        }
+    }
+
 }

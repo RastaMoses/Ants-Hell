@@ -14,8 +14,11 @@ public class PlayerCollision : MonoBehaviour
     // Update is called once per frame
     public void TakeDamage(float damageAmount)
     {
-        stats.health -= damageAmount;
-        Debug.Log(" Player Health: " + stats.health);
+        if (!stats.immune)
+        {
+            stats.health -= damageAmount;
+            Debug.Log(" Player Health: " + stats.health);
+        }
 
     }
 

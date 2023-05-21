@@ -12,11 +12,19 @@ public class Shop : MonoBehaviour
     public int playerShells;
     public int hiveShells;
 
-    public PlayerController player;
+    public GameObject player;
+
+    public GameObject turretOutPost;
+    public GameObject magnetOutPost;
+    public GameObject shieldOutPost;
+    public GameObject slowOutPost;
+
+
+
 
     private void Start()
     {
-        player = FindObjectOfType<PlayerController>();
+        
     }
     public int GetCost(int upgradeNumber)
     {
@@ -47,27 +55,44 @@ public class Shop : MonoBehaviour
             upgradeLvls[upgradeNumber]++;
             if (upgrades[upgradeNumber].playerUpgrade)
             {
-                if(upgradeNumber == 4)
+                if (upgradeNumber == 4)
                 {
                     //Magnet
-                    player.magnet.ChangeRadius(upgrades[upgradeNumber].upgradeStats[upgradeLvls[upgradeNumber]]);
+                    player.GetComponent<PlayerController>().magnet.ChangeRadius(upgrades[upgradeNumber].upgradeStats[upgradeLvls[upgradeNumber]]);
                 }
-                else if (upgradeNumber== 5)
+                else if (upgradeNumber == 5)
                 {
-                    player.stats.movementSpeed = upgrades[upgradeNumber].upgradeStats[upgradeLvls[upgradeNumber]];
+                    player.GetComponent<PlayerStats>().movementSpeed = upgrades[upgradeNumber].upgradeStats[upgradeLvls[upgradeNumber]];
                 }
                 else if (upgradeNumber == 6)
                 {
-                    player.stats.maxHP = upgrades[upgradeNumber].upgradeStats[upgradeLvls[upgradeNumber]];
+                    player.GetComponent<PlayerStats>().maxHP = upgrades[upgradeNumber].upgradeStats[upgradeLvls[upgradeNumber]];
                 }
-                else if(upgradeNumber == 7)
+                else if (upgradeNumber == 7)
                 {
-                    player.stats.carryCapacity = upgrades[upgradeNumber].upgradeStats[upgradeLvls[upgradeNumber]];
+                    player.GetComponent<PlayerStats>().carryCapacity = upgrades[upgradeNumber].upgradeStats[upgradeLvls[upgradeNumber]];
                 }
-            }
-            else if (upgradeNumber == 0)
-            {
 
+                else if (upgradeNumber == 9)
+                {
+                    player.GetComponent<PlayerStats>().Inventory = shieldOutPost;
+                }
+                else if (upgradeNumber == 10)
+                {
+                    player.GetComponent<PlayerStats>().Inventory = turretOutPost;
+                }
+                else if (upgradeNumber == 11)
+                {
+                    player.GetComponent<PlayerStats>().Inventory = magnetOutPost;
+                }
+                else if (upgradeNumber == 12)
+                {
+                    player.GetComponent<PlayerStats>().Inventory = slowOutPost;
+                }
+                else if (upgradeNumber == 0)
+                {
+
+                }
             }
         }
         UpdateUI();
@@ -82,13 +107,22 @@ public class Shop : MonoBehaviour
     void UpdateUI()
     {
         FindObjectOfType<UIController>().UpdateText();
+
+    }
+
+    public void leaveHive()
+    {
+        Time.timeScale = 1;
+        canvas.transform.GetChild(0).gameObject.SetActive(false);
     }
 
     public void EnteredHive()
     {
+        Time.timeScale = 0;
         hiveShells += player.GetComponent<PlayerStats>().shells;
         player.GetComponent<PlayerStats>().shells = 0;
         canvas.transform.GetChild(0).gameObject.SetActive(true);
+        UpdateUI();
         //Open canvas
     }
 }

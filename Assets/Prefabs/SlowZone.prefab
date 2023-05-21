@@ -138,4 +138,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   time: 45
-  constructionZone: {fileID: 0}
+  constructionZone: {fileID: 6554278679805698434, guid: 9ec18a486b49f87469460250ea6bde42, type: 3}

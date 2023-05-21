@@ -38,6 +38,8 @@ public class EnemySpawnDirector : MonoBehaviour
     public GameObject eastSpawns;
     public GameObject northSpawns;
 
+    public GameObject enemyList;
+
     public GameObject AntHill;
 
     public GameObject baseEnemyPrefab;
@@ -113,6 +115,7 @@ public class EnemySpawnDirector : MonoBehaviour
 
         }
         nextEnemyToSpawn.GetComponent<EnemyAI>().target = AntHill.transform;
+        nextEnemyToSpawn.transform.SetParent(enemyList.transform);
         nextEnemyToSpawn.transform.position = enemySpawnPoint.transform.position;
     }
 
